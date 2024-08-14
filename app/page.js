@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Button, Stack, TextField, Typography, InputLabel, Icon } from '@mui/material'
+import { Box, Button, Stack, TextField, Typography, Avatar } from '@mui/material'
 import { useState, useRef, useEffect } from 'react'
 
 
@@ -94,16 +94,16 @@ export default function Home() {
         direction={'column'}
         width="500px"
         height="700px"
-        border="1px solid #D4A373"
+        border="2px solid #0EAAE6ff"
         p={2}
         spacing={3}
         borderRadius={6}
       >
         <Box
-          display="flex"
-          justifyContent="center"
+          display="block"
+          align="center"
           alignItems="center"
-          bgcolor="green"
+          style={{ backgroundColor: 'rgba(16, 116, 171, 0.3)' }}
           color="white"
           borderRadius={6}
           p={2}
@@ -111,8 +111,11 @@ export default function Home() {
           top={0}
           zIndex={1}
         >
-          <Typography variant="h6">Mental Well-being Chatbot</Typography>
-          {/* <Icon color="primary">SmartToy</Icon> */}
+          <Avatar
+            sx={{ bgcolor: "#093F71ff" }}
+            src="../robot.png" />
+          <Typography variant="h5">BrightMind </Typography>
+          <Typography variant="subtitle1">Your Mental Well-being Friend</Typography>
         </Box>
 
         <Stack
@@ -132,7 +135,7 @@ export default function Home() {
             >
               <Box
                 bgcolor={
-                  message.role === 'assistant' ? '#1a759f' : '#34a0a4'
+                  message.role === 'assistant' ? 'rgba(30, 52, 74, 0.6)' : 'rgba(11, 84, 151, 0.5)'
                 }
                 color="white"
                 borderRadius={6}
@@ -149,13 +152,13 @@ export default function Home() {
             sx={{ input: { color: 'white' } }}
             label="Message"
             fullWidth
-            color="success"
+            color="info"
             focused
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             
           />
-          <Button variant="contained" color="success"  onClick={sendMessage}>
+          <Button variant="contained" color="info"  onClick={sendMessage}>
             Send
           </Button>
         </Stack>

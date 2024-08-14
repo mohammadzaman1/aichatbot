@@ -6,5 +6,6 @@
 }
 
 body{
-  background-color: #184e77;
+  /* background-color: #184e77; */
+  background-image: url("../img.jpg");
 }
