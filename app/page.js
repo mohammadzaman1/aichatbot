@@ -114,7 +114,7 @@ export default function Home() {
         p={2}
         spacing={3}
         borderRadius={6}
-        sx={{ width: { xs: "99vw", sm: "70vw", md: "500px" }, height: { xs: '92.3354vh', sm: "70vh", md: "700px" }}}
+        sx={{ width: { xs: "99vw", sm: "70vw", md: "500px" }, height: { xs: '100dvh', sm: "70vh", md: "700px" }}}
       >
         <Box
           display="block"
