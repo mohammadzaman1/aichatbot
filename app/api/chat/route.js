@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server' // Import NextResponse from Next.js f
 import OpenAI from 'openai' // Import OpenAI library for interacting with the OpenAI API
 
 // System prompt for the AI, providing guidelines on how to respond to users
-const systemPrompt = 'Mental health ai: A chatbot that helps users with mental health issues. The chatbot should be empathetic, supportive, and provide helpful resources to users. The chatbot should be able to respond to a variety of mental health topics, including anxiety, depression, and stress. The chatbot should also be able to provide coping strategies, self-care tips, and information on mental health resources. The chatbot should be able to engage in a conversation with users and provide personalized support based on the user\'s needs.'
+const systemPrompt = 'Mental health ai: A chatbot that helps users with mental health issues. The chatbotshould be empathetic, supportive, and provide helpful resources to users. The chatbot should be able to respond to a variety of mental health topics, including anxiety, depression, and stress. The chatbot should also be able to provide coping strategies, self-care tips, and information on mental health resources. The chatbot should be able to engage in a conversation with users and provide personalized support based on the user\'s needs. Include emojis wherever they seem appropriate in the text.'
 // POST function to handle incoming requests
 export async function POST(req) {
     const apiKey = process.env.OPENAI_API_KEY;
 
-    const openai = new OpenAI(apiKey) // Create a new instance of the OpenAI client
+    const openai = new OpenAI() // Create a new instance of the OpenAI client
     const data = await req.json();
     // Parse the JSON body of the incoming request
 

@@ -1,8 +1,23 @@
 'use client'
 
-import { Box, Button, Stack, TextField, Typography, Avatar } from '@mui/material'
+import { Box, Button, Stack, TextField, Typography, Avatar, ThemeProvider } from '@mui/material'
 import { useState, useRef, useEffect } from 'react'
+import { styled } from "@mui/material/styles";
 
+// const Responsive = styled("div")(({ theme }) => ({
+//   [theme.breakpoints.up("mobile")]: {
+//     width: "auto",
+//     height: "100vh",
+//   },
+//    [theme.breakpoints.up("tablet")]: {
+//     width: "auto",
+//     height: "100vh",
+//   },
+//   [theme.breakpoints.up("desktop")]: {
+//     width: "auto",
+//     height: "100vh",
+//   }
+// }));
 
 export default function Home() {
   const [messages, setMessages] = useState([
@@ -90,14 +105,16 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
     >
+    {/* <Responsive> */}
       <Stack
         direction={'column'}
-        width="500px"
+        // width="500px"
         height="700px"
         border="2px solid #0EAAE6ff"
         p={2}
         spacing={3}
         borderRadius={6}
+        sx={{ width: { xs: "100vw", sm: "70vw", md: "500px" }, height: { xs: '100vh', sm: "70vh", md: "700px" }}}
       >
         <Box
           display="block"
@@ -113,7 +130,7 @@ export default function Home() {
         >
           <Avatar
             sx={{ bgcolor: "#093F71ff" }}
-            src="../robot.png" />
+            src="robot.png" />
           <Typography variant="h5">BrightMind </Typography>
           <Typography variant="subtitle1">Your Mental Well-being Friend</Typography>
         </Box>
@@ -140,6 +157,7 @@ export default function Home() {
                 color="white"
                 borderRadius={6}
                 p={3}
+                style={{ lineHeight: '1.2', letterSpacing: '0.5px' }}
               >
                 {message.content}
               </Box>
@@ -147,7 +165,7 @@ export default function Home() {
           ))}
           <div ref={messagesEndRef} />
         </Stack>
-        <Stack direction={'row'} spacing={2}>
+          <Stack direction={'row'} spacing={2}>
           <TextField
             sx={{ input: { color: 'white' } }}
             label="Message"
@@ -163,6 +181,7 @@ export default function Home() {
           </Button>
         </Stack>
       </Stack>
+      {/* </Responsive> */}
     </Box>
   )
 }
